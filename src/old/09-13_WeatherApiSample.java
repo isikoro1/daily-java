@@ -1,5 +1,7 @@
-package September;
+package old;
+
 import java.io.*;
+
 import java.net.*;
 import java.nio.charset.StandardCharsets;
 
@@ -9,7 +11,7 @@ class WeatherApiSample {
         String apiKey = "YOUR_API_KEY";
         String city = "Tokyo"; // 東京の天気
         String urlStr = "http://api.openweathermap.org/data/2.5/weather?q="
-                        + city + "&appid=" + apiKey + "&units=metric&lang=ja";
+                + city + "&appid=" + apiKey + "&units=metric&lang=ja";
 
         try {
             // URLオブジェクトを作成
@@ -19,8 +21,7 @@ class WeatherApiSample {
 
             // レスポンスを読み取り
             BufferedReader in = new BufferedReader(
-                new InputStreamReader(conn.getInputStream(), StandardCharsets.UTF_8)
-            );
+                    new InputStreamReader(conn.getInputStream(), StandardCharsets.UTF_8));
             String inputLine;
             StringBuilder response = new StringBuilder();
 
@@ -38,4 +39,4 @@ class WeatherApiSample {
         }
 
     }
-} 
+}

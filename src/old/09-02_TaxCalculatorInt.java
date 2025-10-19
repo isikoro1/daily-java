@@ -1,4 +1,4 @@
-
+package old;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -13,7 +13,7 @@ class TaxCalculatorInt {
         System.out.print("金額を入力してください (円) : ");
         BigDecimal price = sc.nextBigDecimal();
 
-        BigDecimal taxRate = new BigDecimal("0.10"); //消費税10%
+        BigDecimal taxRate = new BigDecimal("0.10"); // 消費税10%
         BigDecimal tax = price.multiply(taxRate);
 
         // 税額を円単位で四捨五入

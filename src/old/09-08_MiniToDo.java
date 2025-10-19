@@ -1,3 +1,5 @@
+package old;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -56,12 +58,9 @@ class MiniToDo2 {
                 System.out.println("不明なコマンドです。");
             }
         }
-    
-    
+
         sc.close();
     }
-
-
 
     // タスクをファイルから読み込む
     private static List<String> loadTasks() {

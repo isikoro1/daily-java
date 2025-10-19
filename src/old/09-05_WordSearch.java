@@ -1,9 +1,10 @@
+package old;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 import java.util.Scanner;
-
 
 class WordSearch {
     public static void main(String[] args) {
@@ -16,7 +17,7 @@ class WordSearch {
 
         try {
             List<String> lines = Files.readAllLines(file);
-            
+
             System.out.println("=== 検索結果 ===");
             boolean found = false;
             for (int i = 0; i < lines.size(); i++) {

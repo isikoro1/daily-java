@@ -1,3 +1,5 @@
+package old;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -13,7 +15,6 @@ class CSVReader2 {
             System.out.println("=== CSV内容 ===");
             int totalAge = 0;
             int count = 0;
-
 
             for (int i = 0; i < lines.size(); i++) {
                 String line = lines.get(i);
@@ -37,7 +38,7 @@ class CSVReader2 {
                     } catch (NumberFormatException e) {
                         System.out.println("年齢の値が不正: " + columns[1]);
                     }
-                }    
+                }
             }
 
             if (count > 0) {

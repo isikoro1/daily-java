@@ -1,4 +1,8 @@
-import java.io.*;
+package old;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
 import java.util.*;
@@ -28,7 +32,8 @@ class MiniToDo6 {
         System.out.println("=== Mini ToDo List ===");
 
         while (true) {
-            System.out.println("Commands: add <タスク>, list, list done, list undone, delete <番号>, done <番号>, edit <番号> <新しいタスク>, search <キーワード>, exit");
+            System.out.println(
+                    "Commands: add <タスク>, list, list done, list undone, delete <番号>, done <番号>, edit <番号> <新しいタスク>, search <キーワード>, exit");
 
             System.out.print("> ");
             String input = sc.nextLine().trim();
@@ -100,7 +105,6 @@ class MiniToDo6 {
                         System.out.println((i + 1) + ": " + tasks.get(i));
                     }
                 }
-        
 
             } else {
                 System.out.println("無効なコマンドです。");
@@ -113,8 +117,8 @@ class MiniToDo6 {
         for (int i = 0; i < tasks.size(); i++) {
             Task task = tasks.get(i);
             if (mode.equals("all") ||
-                (mode.equals("done") && task.done) ||
-                (mode.equals("undone") && !task.done)) {
+                    (mode.equals("done") && task.done) ||
+                    (mode.equals("undone") && !task.done)) {
                 System.out.println((i + 1) + ": " + task);
             }
         }
@@ -133,7 +137,8 @@ class MiniToDo6 {
 
     private static List<Task> loadTasks() {
         List<Task> tasks = new ArrayList<>();
-        if (!Files.exists(FILE)) return tasks;
+        if (!Files.exists(FILE))
+            return tasks;
         try (BufferedReader reader = Files.newBufferedReader(FILE, StandardCharsets.UTF_8)) {
             String line;
             while ((line = reader.readLine()) != null) {

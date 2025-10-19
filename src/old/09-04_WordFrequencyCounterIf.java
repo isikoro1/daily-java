@@ -1,3 +1,5 @@
+package old;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,7 +23,7 @@ class WordFrequencyCounterIf {
                 // 存在しないなら 1 で初期化
                 freqMap.put(word, 1);
             }
-  
+
         }
         System.out.println("元の文章: " + text);
         System.out.println("単語の出現回数: " + freqMap);

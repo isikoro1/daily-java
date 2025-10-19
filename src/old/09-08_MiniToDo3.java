@@ -1,4 +1,6 @@
 
+package old;
+
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
@@ -86,7 +88,8 @@ class MiniToDo3 {
     // ファイル読み込み
     private static List<Task> loadTasks() {
         List<Task> tasks = new ArrayList<>();
-        if (!Files.exists(FILE)) return tasks;
+        if (!Files.exists(FILE))
+            return tasks;
         try (BufferedReader reader = Files.newBufferedReader(FILE, StandardCharsets.UTF_8)) {
             String line;
             while ((line = reader.readLine()) != null) {

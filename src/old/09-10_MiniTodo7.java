@@ -1,3 +1,4 @@
+package old;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -66,7 +67,6 @@ class MiniToDo7 {
         }
     }
 
-
     // ==== 以下 各コマンドの処理 ====
 
     private static void addTask(List<Task> tasks, String title) {
@@ -79,8 +79,8 @@ class MiniToDo7 {
         for (int i = 0; i < tasks.size(); i++) {
             Task task = tasks.get(i);
             if (mode.equals("all") ||
-                (mode.equals("done") && task.done) ||
-                (mode.equals("undone") && !task.done)) {
+                    (mode.equals("done") && task.done) ||
+                    (mode.equals("undone") && !task.done)) {
                 System.out.println((i + 1) + ": " + task);
             }
         }
@@ -142,17 +142,18 @@ class MiniToDo7 {
 
     private static List<Task> loadTasks() {
         List<Task> tasks = new ArrayList<>();
-        if (!Files.exists(FILE)) return tasks;
+        if (!Files.exists(FILE))
+            return tasks;
         try (BufferedReader reader = Files.newBufferedReader(FILE, StandardCharsets.UTF_8)) {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] parts = line.split(",", 2);
                 if (parts.length == 2) {
-                        boolean done = parts[0].equals("1");
-                        String title = parts[1];
-                        tasks.add(new Task(title, done));
-                    }
+                    boolean done = parts[0].equals("1");
+                    String title = parts[1];
+                    tasks.add(new Task(title, done));
                 }
+            }
         } catch (IOException e) {
             System.out.println("タスクの読み込みに失敗しました: " + e.getMessage());
             e.printStackTrace();
@@ -171,6 +172,5 @@ class MiniToDo7 {
             e.printStackTrace();
         }
     }
-
 
 }

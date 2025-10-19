@@ -1,4 +1,8 @@
-import java.io.*;
+package old;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
 import java.util.*;
@@ -28,7 +32,7 @@ class MiniToDo4 {
 
         System.out.println("=== Mini ToDo List ===");
         System.out.println("Commands: add <タスク>, list, delete <番号>, done <番号>, edit <番号> <新しいタスク>, exit");
-        
+
         while (true) {
             System.out.print("> ");
             String input = sc.nextLine().trim();
@@ -41,7 +45,7 @@ class MiniToDo4 {
                 String task = input.substring(4);
                 tasks.add(new Task(task, false));
                 System.out.println("タスクを追加しました: " + task);
-            
+
             } else if (input.equals("list")) {
                 System.out.println("タスク一覧:");
                 for (int i = 0; i < tasks.size(); i++) {
@@ -59,7 +63,6 @@ class MiniToDo4 {
                 } catch (NumberFormatException e) {
                     System.out.println("番号を正しく入力してください。");
                 }
-
 
             } else if (input.startsWith("done ")) {
                 try {
@@ -81,7 +84,7 @@ class MiniToDo4 {
                         String oldTitle = tasks.get(index).title;
                         tasks.get(index).title = parts[2];
                         System.out.println("タスクを更新しました: " + oldTitle + " -> " + parts[2]);
-                    } 
+                    }
                 } catch (Exception e) {
                     System.out.println("editコマンドは 'edit <番号> <新タイトル>' の形式です。");
                 }
@@ -91,7 +94,7 @@ class MiniToDo4 {
             }
         }
     }
-              
+
     // ファイル保存
     private static void saveTasks(List<Task> tasks) {
         try (BufferedWriter writer = Files.newBufferedWriter(FILE, StandardCharsets.UTF_8)) {
@@ -104,10 +107,10 @@ class MiniToDo4 {
         }
     }
 
-
     private static List<Task> loadTasks() {
         List<Task> tasks = new ArrayList<>();
-        if (!Files.exists(FILE)) return tasks;
+        if (!Files.exists(FILE))
+            return tasks;
         try (BufferedReader reader = Files.newBufferedReader(FILE, StandardCharsets.UTF_8)) {
             String line;
             while ((line = reader.readLine()) != null) {
@@ -123,7 +126,7 @@ class MiniToDo4 {
         }
 
         return tasks;
-    
+
     }
 
 }

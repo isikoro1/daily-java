@@ -1,3 +1,5 @@
+package old;
+
 import java.io.BufferedReader; // テキストを行単位で効率よく読み込むためのクラス
 import java.io.InputStreamReader; // バイトストリームを文字ストリームに変換するためのクラス
 import java.net.HttpURLConnection; // HTTP接続を扱うためのクラス

@@ -1,4 +1,4 @@
-package Java._2025;
+package old;
 
 class Animal {
     String name;

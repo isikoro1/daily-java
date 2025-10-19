@@ -1,3 +1,4 @@
+package old;
 
 import java.util.Scanner;
 
@@ -6,7 +7,7 @@ import java.util.Scanner;
 class TemperatureConverter {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        
+
         System.out.print("摂氏の温度を入力してください (例: 25):");
         double celsius = sc.nextDouble();
 

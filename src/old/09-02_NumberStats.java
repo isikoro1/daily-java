@@ -1,3 +1,4 @@
+package old;
 
 import java.util.Arrays;
 
@@ -6,7 +7,7 @@ import java.util.Arrays;
 class NumberStats {
     public static void main(String[] args) {
         // サンプルデータ
-        int[] numbers = {5, 12, 7, 3, 20};
+        int[] numbers = { 5, 12, 7, 3, 20 };
 
         int sum = Arrays.stream(numbers).sum();
 

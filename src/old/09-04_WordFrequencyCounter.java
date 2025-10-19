@@ -1,3 +1,4 @@
+package old;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,8 +14,8 @@ class WordFrequencyCounter {
 
         // 出現回数を数えるMap
         Map<String, Integer> freqMap = new HashMap<>();
-        //MapはPythonのdict、C#のDictionaryと同じ
-        
+        // MapはPythonのdict、C#のDictionaryと同じ
+
         for (String word : words) {
             freqMap.put(word, freqMap.getOrDefault(word, 0) + 1);
         }

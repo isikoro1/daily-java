@@ -1,4 +1,4 @@
-package Java._2025;
+package old;
 
 class MultiplicationTable {
     public static void main(String[] args) {
