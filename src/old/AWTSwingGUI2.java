@@ -15,7 +15,7 @@ public class AWTSwingGUI2 {
         JButton button = new JButton("クリックしてください");
 
         // ボタンを押したときの処理を追加(ラムダ式)
-        button.addActionListener(e -> label.setText("ボタンが押されました"));
+        button.addActionListener(_ -> label.setText("ボタンが押されました"));
 
         // ウィンドウに部品を配置 (BorderLayoutを利用)
         frame.add(label, java.awt.BorderLayout.CENTER); // 中央にラベル
